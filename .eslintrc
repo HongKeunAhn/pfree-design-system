@@ -20,6 +20,32 @@
   "rules": {
     "prettier/prettier": "error",
     "react-refresh/only-export-components": "warn",
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"],
+          "type",
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react/**",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }
