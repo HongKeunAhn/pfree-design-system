@@ -1,0 +1,25 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "ignorePatterns": [".eslintrc", "vite.config.ts"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react-refresh", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react-refresh/only-export-components": "warn",
+    "react/react-in-jsx-scope": 0
+  }
+}
