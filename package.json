@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:styled": "stylelint --fix **/*.{ts,tsx,css} --ignore-path .gitignore",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -31,6 +32,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "postcss-syntax": "^0.36.2",
     "prettier": "2.8.8",
     "stylelint": "^15.9.0",
@@ -40,5 +43,20 @@
     "stylelint-prettier": "^3.0.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "stylelint --cache --fix",
+      "eslint --cache --fix",
+      "prettier --cache --write"
+    ],
+    "**/*.{ts,tsx}": [
+      "stylelint --cache --fix",
+      "eslint --cache --fix",
+      "prettier --cache --write"
+    ],
+    "**/*.{json,md}": [
+      "prettier --cache --write"
+    ]
   }
 }
